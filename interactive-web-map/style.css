@@ -1,0 +1,255 @@
+:root {
+  --bg: #fbf4ea;
+  --panel: #fff8ef;
+  --text: #2b2118;
+  --muted: #7b6a5b;
+  --line: #eadfce;
+  --accent: #c76b2a;
+  --accent2: #8a4b1f;
+  --chip: #f3e6d6;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Lato, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#app {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+}
+
+#sidebar {
+  height: 100vh;
+  overflow: auto;
+  padding: 16px;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+}
+
+h1 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.sub {
+  margin: 8px 0 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.section {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.section-title {
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--accent2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 10px 0 6px;
+}
+
+
+.status-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--chip);
+  border: 1px solid var(--line);
+  color: var(--accent2);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#roomTypeSelect, #aptInput {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  color: var(--text);
+}
+
+#roomTypeSelect:focus, #aptInput:focus {
+  border-color: rgba(199, 107, 42, 0.55);
+  box-shadow: 0 0 0 3px rgba(199, 107, 42, 0.15);
+}
+
+.search-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+#aptSearchBtn {
+  padding: 9px 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#aptSearchBtn:hover {
+  filter: brightness(0.97);
+}
+
+.hint {
+  margin: 10px 0 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.price-slider input[type="range"] {
+  width: 100%;
+  margin: 6px 0;
+}
+
+.price-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.stats {
+  display: grid;
+  gap: 10px;
+}
+
+.stat {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+  background: #fffdf9;
+}
+
+.stat-k {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.stat-v {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.footer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+#map { height: 100vh; }
+
+/* Geocoder: warm style */
+.mapboxgl-ctrl-geocoder {
+  min-width: 280px !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: none !important;
+}
+
+
+.my-popup .mapboxgl-popup-content {
+  width: 300px;
+  background: #fff8ef;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  color: var(--text);
+  box-shadow: 0 12px 28px rgba(43, 33, 24, 0.14);
+}
+
+.apt-title {
+  margin: 0 0 8px 0;
+  color: var(--accent2);
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.popup-keyline {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--chip);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.badge .muted {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.details {
+  border-top: 1px dashed rgba(234, 223, 206, 0.9);
+  padding-top: 8px;
+}
+
+.details p {
+  margin: 0 0 6px 0;
+  font-size: 12.8px;
+}
+
+.label-inline {
+  color: #1f160f;
+  font-weight: 900;
+}
+
+.value {
+  color: #6f5f52;
+}
+
+
+@media (max-width: 880px) {
+  #app { grid-template-columns: 1fr; }
+  #sidebar { height: auto; }
+  #map { height: 70vh; }
+}

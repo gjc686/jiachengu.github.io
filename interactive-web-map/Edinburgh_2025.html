@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Interactive Web Map</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Edinburgh Short-term Rentals (InsideAirbnb)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Mapbox GL JS -->
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.17.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.17.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <!-- Mapbox Geocoder -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.1.0/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.1.0/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+  </head>
+
+  <body>
+    <div id="app">
+      <aside id="sidebar">
+        <h1>Short-term rentals in Edinburgh</h1>
+        <p class="sub">
+          Point distribution and listing attributes from InsideAirbnb. Use filters to explore patterns.
+        </p>
+
+        <div class="section">
+          <div class="section-title">Controls</div>
+
+          <!-- Current filter status -->
+          <div class="status-wrap">
+            <span class="chip" id="statusRoomType">Room type: All</span>
+            <span class="chip" id="statusPrice">Price: £40–£1800</span>
+          </div>
+
+          <label class="label" for="roomTypeSelect">Room type</label>
+          <select id="roomTypeSelect"></select>
+
+          <label class="label" for="aptInput">Search by apartment name</label>
+          <div class="search-row">
+            <input id="aptInput" type="text" placeholder="Type keywords..." />
+            <button id="aptSearchBtn">Search</button>
+          </div>
+
+          <p class="hint">Tip: search works best when you zoom to the area you’re exploring.</p>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Price range (£)</div>
+          <div class="price-slider">
+            <input type="range" id="minPrice" />
+            <input type="range" id="maxPrice" />
+            <div class="price-values">
+              <span id="minPriceLabel">—</span>
+              <span id="maxPriceLabel">—</span>
+            </div>
+          </div>
+          <p class="hint">
+            Price filter uses a reasonable dataset range (1%–99%): £40–£1800.
+          </p>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Current view summary</div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-k">Visible listings</div>
+              <div class="stat-v" id="statCount">—</div>
+            </div>
+            <div class="stat">
+              <div class="stat-k">Avg. price</div>
+              <div class="stat-v" id="statAvgPrice">—</div>
+            </div>
+            <div class="stat">
+              <div class="stat-k">Avg. min nights</div>
+              <div class="stat-v" id="statAvgMinNights">—</div>
+            </div>
+          </div>
+
+          <p class="hint" id="emptyMessage" style="display:none;">
+            No listings in the current view. Try zooming out or adjusting filters.
+          </p>
+
+          <p class="hint">Updates with pan/zoom and your selected filters.</p>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Data</div>
+          <p class="hint">Snapshot: March 2025</p>
+        </div>
+
+        <div class="footer">
+          Data: InsideAirbnb · Built with Mapbox GL JS · GEOG5015
+        </div>
+      </aside>
+
+      <main id="map"></main>
+    </div>
+  </body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
